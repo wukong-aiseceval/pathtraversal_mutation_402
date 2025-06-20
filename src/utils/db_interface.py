@@ -57,12 +57,12 @@ def verify_credentials(username, password):
 
             # Checks if the credentials match
             if username == databaseUser and password == databasePass:
-                foundAccount = True
+                account_found = True
 
         cursor.close()
 
         # Checks if the account was found
-        if foundAccount:
+        if account_found:
             return "Good!"
         else:
             return "Bad!"

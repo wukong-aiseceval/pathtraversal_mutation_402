@@ -11,8 +11,8 @@ def is_valid_email(email):
     
     # DNS MX record check
     try:
-        mx_records = socket.getaddrinfo(domain, None, socket.AF_INET, socket.SOCK_STREAM)
-        if not any([record[1] == socket.SOCK_STREAM for record in mx_records]):
+        dns_records = socket.getaddrinfo(domain, None, socket.AF_INET, socket.SOCK_STREAM)
+        if not any([record[1] == socket.SOCK_STREAM for record in dns_records]):
             return False
     except socket.gaierror:
         return False
